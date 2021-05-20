@@ -11,8 +11,7 @@ pipeline {
       steps {
         echo 'building the application'
         echo "build version ${NEW_VERSION}"
-        sh 'javac Hello.java'
-        sh 'java Hello'
+        javac Hello.java
       }
     }
     
