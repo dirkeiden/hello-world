@@ -5,7 +5,7 @@ node {
   
   stage('checkout') {
     echo "pulling changes from branch ${params.branch}"
-    git branch: ${params.branch}, credentialsId: '79de0532-7126-4792-a168-79153cead2b5', url: 'https://github.com/dirkeiden/hello-world.git'
+    git branch: "${params.branch}", credentialsId: '79de0532-7126-4792-a168-79153cead2b5', url: 'https://github.com/dirkeiden/hello-world.git'
   }
   
   stage('build') {
