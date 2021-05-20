@@ -4,6 +4,7 @@ pipeline {
   
   environment {
     NEW_VERSION = '1.0.0'
+    SERVER_CREDENTIALS = credentials('server-credentials')
   }
   
   stages {
@@ -23,6 +24,11 @@ pipeline {
     stage("deploy") {
       steps {
         echo 'deploying the application'
+        withCredentials([
+          usernamePassword(credentials: 'server-creadentials', usernameVariable: USER, passwordVariable: PWD)
+        ]) {
+          echo "user: ${USER}, pwd: ${PWD}"
+        }
       }
     }
   }
