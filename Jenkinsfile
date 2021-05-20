@@ -4,8 +4,8 @@ node {
   stage('build') {
     echo 'building the application'
     echo "build version ${NEW_VERSION}"
-    bat 'javac Hello.java'
-    bat 'java Hello'
+    bat 'javac World.java'
+    bat 'java World'
   }
     
   stage('test') {
