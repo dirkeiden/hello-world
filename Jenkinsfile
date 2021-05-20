@@ -12,6 +12,7 @@ pipeline {
         echo 'building the application'
         echo "build version ${NEW_VERSION}"
         bat 'javac Hello.java'
+        bat 'java Hello'
       }
     }
     
