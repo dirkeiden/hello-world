@@ -4,7 +4,7 @@ node {
   properties([parameters([choice(choices: ['master', 'dev'], description: 'Select branch to build', name: 'branch')])])
   
   stage('checkout') {
-    echo "pulling change from brach ${params.branch}"
+    echo "pulling change from branch ${params.branch}"
     git branch: 'master', credentialsId: '79de0532-7126-4792-a168-79153cead2b5', url: 'https://github.com/dirkeiden/hello-world.git'
   }
   
